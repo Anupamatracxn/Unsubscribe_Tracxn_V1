@@ -21,12 +21,12 @@ const WEBAPP_URL = "https://script.google.com/macros/s/AKfycby4SyrEAYsvB2GCS4MrN
 /* GET URL VALUES */
 const params = new URLSearchParams(window.location.search);
 const email = params.get("email") || "";
-const campaign = params.get("campaigName") || "our updates";
-const category = params.get("categoryName") || "";
+const campaign = params.get("campaigname") || "our updates";
+const category = params.get("categoryname") || "";
 
 /* SHOW TEXT */
 document.getElementById("unsubscribeText").innerHTML =
-  `We've removed you from our <b>${campaigName}</b> emails.<br>
+  `We've removed you from our <b>${campaign}</b> emails.<br>
    You won't receive further updates from your Account Manager.`;
 
 /* SEND DATA */
