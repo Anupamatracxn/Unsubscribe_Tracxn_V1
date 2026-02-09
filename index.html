@@ -107,13 +107,13 @@ const WEBAPP_URL = "https://script.google.com/macros/s/AKfycby4SyrEAYsvB2GCS4MrN
 /* ---------- GET URL VALUES ---------- */
 const params = new URLSearchParams(window.location.search);
 const email = params.get("email") || "";
-const campaignName = params.get("campaigName") || "our updates";
-const category = params.get("categoryName") || "";
+const campaignName = params.get("campaign") || "our updates";
+const category = params.get("category") || "";
 
 
 /* ---------- SHOW CAMPAIGN NAME ON PAGE ---------- */
 document.getElementById("unsubscribeText").innerHTML =
-  `We've removed you from our <b>${campaignName}</b> emails.<br>
+  `We've removed you from our <b>${campaign}</b> emails.<br>
    You won't receive further updates from your Account Manager.`;
 
 
@@ -138,8 +138,8 @@ document.getElementById("unsubscribeText").innerHTML =
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         email,
-        campaign: campaignName,
-        category:categoryName,
+        campaign,
+        category,
         entropy: delay,
         ua: navigator.userAgent,
         tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
