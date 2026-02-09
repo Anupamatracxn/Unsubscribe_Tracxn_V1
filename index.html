@@ -108,6 +108,8 @@ const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbz4MBGvrCh76tOWKxuYZ
 const params = new URLSearchParams(window.location.search);
 const email = params.get("email") || "";
 const campaignName = params.get("campaigname") || "our updates";
+const category = params.get("category") || "";
+
 
 /* ---------- SHOW CAMPAIGN NAME ON PAGE ---------- */
 document.getElementById("unsubscribeText").innerHTML =
