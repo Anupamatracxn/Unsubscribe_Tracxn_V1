@@ -107,8 +107,8 @@ const WEBAPP_URL = "https://script.google.com/macros/s/AKfycby4SyrEAYsvB2GCS4MrN
 /* ---------- GET URL VALUES ---------- */
 const params = new URLSearchParams(window.location.search);
 const email = params.get("email") || "";
-const campaignName = params.get("campaigname") || "our updates";
-const category = params.get("category") || "";
+const campaignName = params.get("campaigName") || "our updates";
+const category = params.get("categoryName") || "";
 
 
 /* ---------- SHOW CAMPAIGN NAME ON PAGE ---------- */
@@ -139,7 +139,7 @@ document.getElementById("unsubscribeText").innerHTML =
       body: JSON.stringify({
         email,
         campaign: campaignName,
-        category:category,
+        category:categoryName,
         entropy: delay,
         ua: navigator.userAgent,
         tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
